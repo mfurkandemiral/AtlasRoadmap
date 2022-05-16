@@ -6,7 +6,7 @@ from pages.sign_in_page import SignInPage
 
 
 class HomePage(BasePage):
-    DONT_CHANGE_BUTTON = (By.CSS_SELECTOR, ".a-button-inner:nth-child(1)")
+    DONT_CHANGE_BUTTON = (By.CLASS_NAME, "a-button-inner")
     SIGN_IN_BUTTON = (By.ID, "nav-link-accountList")
     MAIN_LOGO = (By.ID, 'nav-logo-sprites')
     SEARCH_TEXTBOX = (By.ID, 'twotabsearchtextbox')
@@ -20,7 +20,7 @@ class HomePage(BasePage):
         return self.find_element(*self.MAIN_LOGO)
 
     def dont_change_button_click(self):
-        self.click(*self.DONT_CHANGE_BUTTON)
+        self.find_elements(1, *self.DONT_CHANGE_BUTTON).click()
 
     def go_to_sign_in_page(self):
         self.click(*self.SIGN_IN_BUTTON)

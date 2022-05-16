@@ -1,8 +1,8 @@
 class Ogrenci():
-    def __init__(self, ogrenciAdi, ogrenciSoyadi, ogrenciSinif):
-        self.ogrenciAdi = ogrenciAdi
-        self.ogrenciSoyadi = ogrenciSoyadi
-        self.ogrenciSinif = ogrenciSinif
+    def __init__(self, ogrenci_adi, ogrenci_soyadi, ogrenci_sinif):
+        self.ogrenciAdi = ogrenci_adi
+        self.ogrenciSoyadi = ogrenci_soyadi
+        self.ogrenciSinif = ogrenci_sinif
 
 
 class Soru(Ogrenci):
