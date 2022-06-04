@@ -28,6 +28,7 @@ class PartnerPage(BasePage):
         self.wait_for_element_clickable(self.SIDE_MENU_ITEMS)
         self.wait_for_element_clickable(self.find_elements(2, *self.SIDE_MENU_ITEMS)).click()
         self.select_experience_sub_menu_items()
+
         return InstoryPage(self.driver)
 
     def select_experience_sub_menu_items(self):

@@ -15,6 +15,7 @@ class BasePage(object):
 
     def fill(self, text, *locator):
         self.find_element(*locator).send_keys(text)
+
         return self
 
     def click(self, *locator):
@@ -53,6 +54,7 @@ class BasePage(object):
 
     def generate_campaign_name(self):
         per_name = "%s%s%s%s%s%s" % ("MFDwasHERE", "-", self.date.second, self.date.day, self.date.month, self.date.year)
+
         return str(per_name)
 
     def scroll(self, *locator):

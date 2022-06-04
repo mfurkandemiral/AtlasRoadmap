@@ -72,6 +72,7 @@ class InstoryPage(BasePage):
         self.navigate_tabs("Rules")
         time.sleep(4)
         self.wait_for_element_clickable(self.PAGE_RULES).click()
+
         return self
 
     def check_campaign_rules(self, condition, operator):
@@ -85,6 +86,7 @@ class InstoryPage(BasePage):
     def select_condition(self, condition):
         self.click(*self.CONDITION_LIST)
         self.fill(condition, *self.CONDITION_SEARCH_BOX).fill(Keys.ENTER, *self.CONDITION_SEARCH_BOX)
+
         return self
 
     def select_operator(self, operator):
@@ -94,6 +96,7 @@ class InstoryPage(BasePage):
     def click_save_and_continue(self):
         time.sleep(1)
         self.wait_for_element_clickable(self.SAVE_AND_CONTINUE_BTN).click()
+
         return self
 
     def click_add_new_variant(self):
@@ -145,6 +148,7 @@ class InstoryPage(BasePage):
 
     def go_to_campaign_details(self):
         self.wait_for_element_clickable(self.CAMPAIGN_DETAILS).click()
+
         return self
 
     def get_campaign_name(self):
@@ -170,6 +174,7 @@ class InstoryPage(BasePage):
         self.wait_for_element_clickable(self.TEST_LINK_VARIATION_GROUP_BTNS)
         self.hover(self.find_elements(0, *self.TEST_LINK_VARIATION_GROUP_BTNS))
         self.driver.get(self.find_elements(0, *self.TEST_LINK_DOMAIN_URL).get_attribute('href'))
+
         return self
 
     def generate_campaign(self):

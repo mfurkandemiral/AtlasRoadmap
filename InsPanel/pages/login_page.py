@@ -18,4 +18,5 @@ class LoginPage(BasePage):
 
     def click_login_button(self):
         self.wait_for_element_clickable(self.LOGIN_BUTTON).click()
+
         return PartnerPage(self.driver)
