@@ -3,6 +3,19 @@ from tests.base_test import BaseTest
 
 
 class TestCheckWebInstoryCampaign(BaseTest):
+    """
+
+    1. Log in the panel, select Optimize and go to Desktop Web Instory
+    2. Create Web Instory campaign
+    3. Fill all steps till Launch step
+    4. Change campaign language, date&time, display settings, add priority and notes
+    5. Go to do list and check campaign status is Test and is present in Test link menu
+    6. Open campaign's details and check all information that was filled during launch is present there
+    7. Go to website with the test link of the campaign
+    8. Verify that campaign is visible in storage and class existence contro
+
+    """
+
     email = "your@mail.com"
     password = "yourpassword"
     condition = "Page Type"
@@ -17,6 +30,7 @@ class TestCheckWebInstoryCampaign(BaseTest):
     campaign_status = "Visible"
 
     def test_check_web_instory_campaign(self):
+        """Test checks completes all steps to create Web Instory campaign and verifies has been created on api side."""
         self.logger.info("1. Log in the panel, select Optimize and go to Desktop Web Instory")
         login_page = LoginPage(self.driver)
         login_page.fill_login_form(self.email, self.password)
@@ -83,3 +97,6 @@ class TestCheckWebInstoryCampaign(BaseTest):
         local_storage = campaign_page.partner_page_campaign_control(camp_id)
         self.assertIn('"step1-displayed":true', local_storage, 'No display template log in local storage!')
         self.logger.info("Campaign is visible in storage and class existence controlled successfully!")
+
+    def tearDown(self):
+        self.driver.close()
